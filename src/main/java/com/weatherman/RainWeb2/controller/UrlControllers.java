@@ -26,6 +26,7 @@ public class UrlControllers
         //"&" cn be used to add another key-value pair(Req. another @RequestParam anno)
         String msg="Yo "+n+"!";
         model.put ("msg",msg);
+
         return "index";
     }
 
@@ -36,6 +37,7 @@ public class UrlControllers
         //@PathVariable strings should always match curly brackets
         String msg="Sup! "+name+" "+surname;
         model.put ("msg2",msg);
+
         return "SecondView";
     }
 
@@ -45,6 +47,7 @@ public class UrlControllers
     {
         String ss="Sign Up here!";
         model.put ("getForm",ss);
+
         return "form";
     }
 
@@ -53,6 +56,7 @@ public class UrlControllers
     {
         System.out.println (PJ);
         model.put ("form",PJ);
+
         return "result";
     }
 
