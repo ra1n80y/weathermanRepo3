@@ -14,30 +14,29 @@ public class UrlControllers
     public UrlControllers()
     {
         System.out.println ("@RequestParam URL :http://localhost:8080/RainWebApp2/getmsg?name=insertName");
-        System.out.println ("@PathVariable URL :http://localhost:8080/RainWebApp2/getmsg/param1/param2");
+        System.out.println ("@PathVariable URL :http://localhost:8080/RainWebApp2/getmsg/param1/param");
         System.out.println ("Bi-directional URL :http://localhost:8080/RainWebApp2/register");
     }
 
     //Data is passed via a query that selects a manually initialized key-value pair (?key=value)
     @GetMapping("getmsg")
-    public String dispMsg1(@RequestParam("name") String n, Map<String,Object> model)
+    public String dispMsg1(@RequestParam("name") String n, Map<String,Object>model)
     {
-        //@RequestParam is used when var. name(n) and param string(key name["name"]) don't match
+        //@RequestParam is used when var. name and param string don't match
         //"&" cn be used to add another key-value pair(Req. another @RequestParam anno)
-
-        String message="Yo "+n+"!";
-        model.put ("msg",message);
+        String msg="Yo "+n+"!";
+        model.put ("msg",msg);
 
         return "index";
     }
 
     //Data is passed directly in URL path
     @GetMapping("getmsg/{name}/{surname}")
-    public String dispMsg2(@PathVariable("name")String name, @PathVariable("surname") String surname, Map<String,Object> model)
+    public String dispMsg2(@PathVariable("name")String name, @PathVariable("surname") String surname, Map<String,Object>model)
     {
-        //@PathVariable strings should always match curly bracket names chosen
-        String message2 ="Sup! "+name+" "+surname;
-        model.put ("msg2", message2);
+        //@PathVariable strings should always match curly brackets
+        String msg="Sup! "+name+" "+surname;
+        model.put ("msg2",msg);
 
         return "SecondView";
     }
