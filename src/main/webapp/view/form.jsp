@@ -5,6 +5,7 @@
     <title>Form View</title>
 </head>
 <body>
+
 <h1>${getForm}</h1>
 
 <form action="register" method="post">
