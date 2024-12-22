@@ -10,5 +10,6 @@
 <h1>NAME: ${form.firstName} </h1>
 <h1>SURNAME: ${form.lastName} </h1>
 
+SAVED IN DATABASE...WELCOME, ${form.firstName}!
 </body>
 </html>
